@@ -2,13 +2,15 @@
 
 using UnrealBuildTool;
 
+
 public class AssetEditor : ModuleRules
 {
 	public AssetEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" , "AssetDefinition"
+		, "UnrealEd"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
