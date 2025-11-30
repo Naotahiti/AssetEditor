@@ -2,21 +2,18 @@
 
 
 #include "Toolkits/AssetEditorToolkit.h"
-#include "MyAssetEditorToolkit.generated.h"
+//#include "MyAssetEditorToolkit.generated.h"
 
 class UMyAsset;
 
 
-class ASSETEDITOR_API FMyAssetEditorToolkit : class FAssetEditorToolkit
+class ASSETEDITOR_API FMyAssetEditorToolkit : public FAssetEditorToolkit
 
 {
 public:
 
 
-    void InitMyAssetEditor(
-        const EToolkitMode::Type Mode,
-        const TSharedPtr<class IToolkitHost>& InitToolkitHost,
-        UMyAsset* InAsset);
+    FMyAssetEditorToolkit();
 
 
     virtual FName GetToolkitFName() const override;
@@ -29,4 +26,8 @@ protected:
 
 
 };
+
+
+
+
 
