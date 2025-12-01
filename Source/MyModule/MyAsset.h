@@ -6,6 +6,7 @@
 #include "Engine/DataAsset.h"
 #include "MyAsset.generated.h"
 
+class UEdGraph;
 
 UCLASS(BlueprintType)
 class UMyAsset : public UPrimaryDataAsset
@@ -16,6 +17,8 @@ public:
     UMyAsset();
 
 public:
+
+ 
     /** My dummy float for testing. */
     UPROPERTY(EditDefaultsOnly, Category = "Test")
     float MyDummyFloat;
@@ -23,4 +26,9 @@ public:
     /** My dummy string for testing. */
     UPROPERTY(EditDefaultsOnly, Category = "Test")
     FText MyDummyString;
+
+    UPROPERTY()
+    UEdGraph* EdGraph;
+
+
 };

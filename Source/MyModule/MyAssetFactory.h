@@ -7,7 +7,7 @@
 #include "MyAssetFactory.generated.h"
 
 UCLASS()
-class ASSETEDITOR_API UMyAssetFactory : public UFactory
+class MYMODULE_API UMyAssetFactory : public UFactory
 {
 	GENERATED_BODY()
 

@@ -2,4 +2,5 @@
 
 UMyAsset::UMyAsset()
 {
+	EdGraph = nullptr;
 }
