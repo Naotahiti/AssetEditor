@@ -1,10 +1,18 @@
 #include "MyAssetTypeActions.h"
 #include "MyAsset.h"
+#include "MyAssetDefinition.h"
 #include "MyAssetEditorToolkit.h"
+
+FMyAssetTypeActions::FMyAssetTypeActions(uint32 InAssetCategory)
+    : MyAssetCategory(InAssetCategory)
+{
+}
 
 FText FMyAssetTypeActions::GetName() const
 {
-    return FText::FromString(TEXT("Custom Asset"));
+    UMyAsset* asset = GetMutableDefault<UMyAsset>();
+    
+    return FText::FromString(asset->MyDummyString);
 }
 
 FColor FMyAssetTypeActions::GetTypeColor() const
@@ -31,5 +39,6 @@ void FMyAssetTypeActions::OpenAssetEditor(const TArray<UObject*>& InObjects, TSh
 
 uint32 FMyAssetTypeActions::GetCategories()
 {
-    return EAssetTypeCategories::Misc;
+ 
+    return MyAssetCategory;
 }

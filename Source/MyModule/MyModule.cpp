@@ -10,7 +10,12 @@ void FMyModule::StartupModule()
     UE_LOG(LogTemp, Warning, TEXT("MyModule started !"));
     IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
 
-    TSharedRef<IAssetTypeActions> Actions = MakeShared<FMyAssetTypeActions>();
+    MyCustomAssetCategory = AssetTools.RegisterAdvancedAssetCategory(
+        FName(TEXT("MyCustomCategory")),           
+        FText::FromString(TEXT("Ma Catégorie"))    
+    );
+
+    TSharedRef<IAssetTypeActions> Actions = MakeShared<FMyAssetTypeActions>(MyCustomAssetCategory);
     AssetTools.RegisterAssetTypeActions(Actions);
     RegisteredAssetTypeActions.Add(Actions);
 }

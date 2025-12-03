@@ -12,6 +12,8 @@ public:
 
 private:
     TArray<TSharedPtr<IAssetTypeActions>> RegisteredAssetTypeActions;
+
+    uint32 MyCustomAssetCategory;
 };
 
 

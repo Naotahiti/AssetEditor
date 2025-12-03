@@ -12,7 +12,7 @@ FText  UMyAssetDefinition::GetAssetDescription(const FAssetData& AssetData) cons
 {
 	if (const UMyAsset* MyAsset = Cast<UMyAsset>(AssetData.GetAsset()))
 	{
-		return MyAsset->MyDummyString;
+		return MyAsset->MyAssetDefinition;
 	}
 
 	return FText::GetEmpty();
@@ -35,7 +35,7 @@ TConstArrayView<FAssetCategoryPath> UMyAssetDefinition::GetAssetCategories() con
 
 {
 	static const auto Categories = {
-FAssetCategoryPath(FText::FromName("My Category")),
+FAssetCategoryPath(FText::FromName("My Asset Category")),
 	};
 
 	return Categories;

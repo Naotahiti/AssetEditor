@@ -25,7 +25,10 @@ public:
 
     /** My dummy string for testing. */
     UPROPERTY(EditDefaultsOnly, Category = "Test")
-    FText MyDummyString;
+    FString MyDummyString;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Test")
+    FText MyAssetDefinition;
 
     UPROPERTY()
     UEdGraph* EdGraph;
